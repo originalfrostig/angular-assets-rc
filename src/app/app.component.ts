@@ -9,8 +9,9 @@ import {tap} from 'rxjs/operators';
 })
 export class AppComponent {
   title = 'angular-assets-rc';
+  echo$ = this._http.get('assets/config.json');
 
   constructor(private _http: HttpClient) {
-    this._http.get('assets/config.json').pipe(tap(r => console.log(JSON.stringify(r)))).toPromise();
+
   }
 }
